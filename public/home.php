@@ -34,7 +34,7 @@ $clientes = $controller->buscarTodos();
                     <td><?= $c->getTelefone(); ?></td>
                     <td>
                         <a class="btn btn-light" href="cad_cliente.php?key=<?=$c->getId()?>">Editar</a>
-                        <a class="btn btn-link">Excluir</a>
+                        <a class="btn btn-link" href="cad_cliente.php?key=<?=$c->getId()?>">Excluir</a>
                     </td>
                 </tr>
             <?php

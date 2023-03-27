@@ -33,6 +33,7 @@ if (isset($_GET) && isset($_GET['key'])) {
             <input type="tel" class="form-control" id="telefone" name="telefone" value="<?= $cliente->getTelefone() ?>">
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary" formaction="../acoes/excluir_cliente.php">Excluir</button>
     </form>
 
     <?php

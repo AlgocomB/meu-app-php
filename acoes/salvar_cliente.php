@@ -29,10 +29,10 @@ if (isset($_POST) && isset($_POST['id'])) {
     $resultado = $controller->atualizarCliente($cliente);
 
     if ($resultado) {
-        $_SESSION['mensagem'] = "Atualizado com sucesso";
+        $_SESSION['mensagem'] = "Cliente atualizado com sucesso.";
         $_SESSION['sucesso'] = true;
     } else {
-        $_SESSION['mensagem'] = "Erro ao atualizar";
+        $_SESSION['mensagem'] = "Erro ao atualizar cliente.";
         $_SESSION['sucesso'] = false;
     }
     header('Location:../public/cad_cliente.php');
@@ -51,10 +51,10 @@ if (isset($_POST) && isset($_POST['id'])) {
         $dao = new ClienteController();
         $resultado = $dao->criarCliente($cliente);
         if ($resultado) {
-            $_SESSION['mensagem'] = "Criado com sucesso";
+            $_SESSION['mensagem'] = "Cliente criado com sucesso.";
             $_SESSION['sucesso'] = true;
         } else {
-            $_SESSION['mensagem'] = "Erro ao criar";
+            $_SESSION['mensagem'] = "Erro ao criar cliente.";
             $_SESSION['sucesso'] = false;
         }
     } else {
