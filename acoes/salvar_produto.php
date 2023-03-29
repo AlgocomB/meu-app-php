@@ -7,8 +7,8 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/controllers/produt
 
 $produto = new Produto();
 
-if (isset($_POST) && isset($_POST['id'])) {
-    $id           = addslashes(filter_input(INPUT_POST, 'id'));
+if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
+    $id           = intval(addslashes(filter_input(INPUT_POST, 'id')));
     $nome         = addslashes(filter_input(INPUT_POST, 'nome'));
     $descricao    = addslashes(filter_input(INPUT_POST, 'descricao'));
     $codigobarras = addslashes(filter_input(INPUT_POST, 'codigobarras'));

@@ -7,12 +7,11 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/controllers/client
 
 $cliente = new Cliente();
 
-if (isset($_POST) && isset($_POST['id'])) {
-    $id         = addslashes(filter_input(INPUT_POST, 'id'));
+if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
+    $id         = intval(addslashes(filter_input(INPUT_POST, 'id')));
     $nome       = addslashes(filter_input(INPUT_POST, 'nome'));
     $cpfcnpj    = addslashes(filter_input(INPUT_POST, 'cpfcnpj'));
     $telefone   = addslashes(filter_input(INPUT_POST, 'telefone'));
-    var_dump($cpfcnpj);
 
     if (empty($nome) || empty($cpfcnpj)) {
         $_SESSION['mensagem'] = "Obrigatório informar Nome e CPF/CNPJ";
